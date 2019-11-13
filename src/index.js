@@ -10,4 +10,5 @@ const app = (
   </BrowserRouter>
 );
 
+// eslint-disable-next-line no-undef
 ReactDOM.render(app, document.getElementById('root'));
