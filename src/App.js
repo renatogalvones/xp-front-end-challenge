@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+
+import Main from './containers/Main';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -11,7 +13,6 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 // import Routes from './Routes';
-import Main from './containers/Main';
 
 const App = () => (
   <div>
@@ -19,6 +20,6 @@ const App = () => (
     <Route path="/" component={Main} />
     {/* <Route path="/albums/:artist" component={Albums} /> */}
   </div>
-)
+);
 
 export default App;
