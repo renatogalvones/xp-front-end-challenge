@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-family: "Roboto", sans-serif;
     background: transparent url('https://raw.githubusercontent.com/rodyrafa/challenge/master/imgs/home_1.jpg') no-repeat top center;
+    // background: transparent url('https://raw.githubusercontent.com/rodyrafa/challenge/master/imgs/home_2.jpg') no-repeat top center;
   }
 `;
 

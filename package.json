@@ -2,9 +2,12 @@
   "scripts": {
     "start": "webpack-dev-server",
     "precommit": "lint-staged",
-    "format": "prettier --write ./**/*.{js,jsx,json}"
+    "format": "prettier --write ./**/*.{js,jsx,json}",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
@@ -22,6 +25,10 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "@babel/preset-stage-2": "^7.0.0",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
@@ -32,6 +39,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
