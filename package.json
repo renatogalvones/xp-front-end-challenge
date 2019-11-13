@@ -22,9 +22,22 @@
     "@babel/preset-stage-2": "^7.0.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.9",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
   }
 }
