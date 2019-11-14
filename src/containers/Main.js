@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Search from '../components/Search';
 import SpotifyLogo from '../assets/spotify-logo.svg';
 
+import Heading from '../components/Heading';
+
 const MainStyled = styled.section`
   max-width: 1130px;
   margin: 75px auto 0;
@@ -14,7 +16,6 @@ const Logo = styled.img`
   position: absolute;
   top: 5%;
   left: 3%;
-  background: yellow;
 `;
 
 const Main = () => (
@@ -22,6 +23,7 @@ const Main = () => (
     <Logo src={SpotifyLogo} alt="Spotify Logo" />
     <MainStyled>
       <Search />
+      <Heading>Álbuns buscados recentemente</Heading>
     </MainStyled>
   </>
 );
