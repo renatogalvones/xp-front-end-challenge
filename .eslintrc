@@ -9,6 +9,7 @@
   "rules": {
     // A jsx extension is not required for files containing jsx
     "react/jsx-filename-extension": 0,
-    "import/no-extraneous-dependencies": 0
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }

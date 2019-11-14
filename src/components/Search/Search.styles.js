@@ -5,6 +5,7 @@ import colors from '../../theme/colors';
 export const FormStyled = styled.form`
   padding: 0 5px 16px;
   border-bottom: solid 1px ${colors.primary[700]};
+  margin-bottom: 20px;
 `;
 
 export const SearchStyled = styled.label`

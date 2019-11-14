@@ -10,19 +10,37 @@ const BackgroundStyled = styled.div`
   padding: 5%;
 `;
 
+const cardProps = {
+  album: 'Nome do album',
+  artist: 'Nome do artista',
+};
+
+const imageProps = {
+  album: 'Nome do album grande de duas linhas',
+  artist: 'Nome do artista grande de duas linhas',
+  imgUrl:
+    'https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg',
+};
+
 const stories = storiesOf('Card', module);
 stories
   .add('default', () => (
     <BackgroundStyled>
-      <Card album="Nome do album" artist="Nome do artista" />
+      <Card {...cardProps} />
     </BackgroundStyled>
   ))
-  .add('with image and alt', () => (
+  .add('with image', () => (
     <BackgroundStyled>
-      <Card
-        album="Nome do album grande de duas linhas"
-        artist="Nome do artista grande de duas linhas"
-        imgUrl="https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg"
-      />
+      <Card {...imageProps} />
+    </BackgroundStyled>
+  ))
+  .add('Bigger default', () => (
+    <BackgroundStyled>
+      <Card.Bigger {...cardProps} />
+    </BackgroundStyled>
+  ))
+  .add('Bigger with image', () => (
+    <BackgroundStyled>
+      <Card.Bigger {...imageProps} />
     </BackgroundStyled>
   ));

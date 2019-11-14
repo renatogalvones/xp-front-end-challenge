@@ -1,18 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
 
+import GlobalStyles from './App.styles';
 import Main from './containers/Main';
-
-const GlobalStyles = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    background: transparent url('https://raw.githubusercontent.com/rodyrafa/challenge/master/imgs/home_1.jpg') no-repeat top center;
-    // background: transparent url('https://raw.githubusercontent.com/rodyrafa/challenge/master/imgs/home_2.jpg') no-repeat top center;
-  }
-`;
 
 // import Routes from './Routes';
 

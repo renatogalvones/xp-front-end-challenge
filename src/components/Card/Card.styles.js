@@ -1,14 +1,20 @@
+/* eslint-disable no-confusing-arrow */
 import styled from 'styled-components';
 
+const sizes = {
+  default: 170,
+  bigger: 300,
+};
+
 export const CardStyled = styled.figure`
-  max-width: 170px;
+  max-width: ${(props) => (props.bigger ? sizes.bigger : sizes.default)}px;
 `;
 
 export const ImageStyled = styled.div`
   background-color: #fafafa;
   display: inline-block;
-  height: 170px;
-  width: 170px;
+  height: ${(props) => (props.bigger ? sizes.bigger : sizes.default)}px;
+  width: ${(props) => (props.bigger ? sizes.bigger : sizes.default)}px;
 
   > img {
     width: 100%;

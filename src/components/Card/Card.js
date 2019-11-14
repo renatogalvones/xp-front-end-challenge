@@ -15,16 +15,19 @@ const defaultProps = {
   imgUrl: '',
 };
 
-const Card = ({ imgUrl, album, artist }) => {
+export const renderCard = (imgUrl, album, artist, bigger) => {
   const alt = `${album} - ${artist}`;
   return (
-    <CardStyled>
-      <ImageStyled>{imgUrl && <img src={imgUrl} alt={alt} />}</ImageStyled>
+    <CardStyled bigger={bigger}>
+      <ImageStyled bigger={bigger}>{imgUrl && <img src={imgUrl} alt={alt} />}</ImageStyled>
       <AlbumStyled>{album}</AlbumStyled>
       <ArtistStyled>{artist}</ArtistStyled>
     </CardStyled>
   );
 };
+
+const Card = ({ imgUrl, album, artist }) => renderCard(imgUrl, album, artist);
+Card.Bigger = ({ imgUrl, album, artist }) => renderCard(imgUrl, album, artist, true);
 
 Card.propTypes = propTypes;
 Card.defaultProps = defaultProps;
