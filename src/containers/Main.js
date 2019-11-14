@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Search from '../components/Search';
+// import Search from '../components/Search';
 import SpotifyLogo from '../assets/spotify-logo.svg';
 
-import Heading from '../components/Heading';
+import Card from '../components/Card';
+// import Heading from '../components/Heading';
+
+// import Track from '../components/Track';
 
 const MainStyled = styled.section`
   max-width: 1130px;
@@ -22,8 +25,12 @@ const Main = () => (
   <>
     <Logo src={SpotifyLogo} alt="Spotify Logo" />
     <MainStyled>
-      <Search />
-      <Heading>Álbuns buscados recentemente</Heading>
+      {/* <Search /> */}
+      {/* <Heading>Álbuns buscados recentemente</Heading> */}
+      <Card.Bigger
+        album="Nome do album grande de duas linhas"
+        artist="Nome do artista grande de duas linhas"
+      />
     </MainStyled>
   </>
 );

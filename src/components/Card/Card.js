@@ -1,9 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 
-import {
-  CardStyled, ImageStyled, AlbumStyled, ArtistStyled,
-} from './Card.styles';
+import { CardStyled, ImageStyled } from './Card.styles';
 
 const propTypes = {
   imgUrl: string,
@@ -20,8 +18,10 @@ export const renderCard = (imgUrl, album, artist, bigger) => {
   return (
     <CardStyled bigger={bigger}>
       <ImageStyled bigger={bigger}>{imgUrl && <img src={imgUrl} alt={alt} />}</ImageStyled>
-      <AlbumStyled>{album}</AlbumStyled>
-      <ArtistStyled>{artist}</ArtistStyled>
+      <figcaption>
+        <span>{album}</span>
+        <span>{artist}</span>
+      </figcaption>
     </CardStyled>
   );
 };
