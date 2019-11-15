@@ -1,14 +1,25 @@
 import React from 'react';
-import { node } from 'prop-types';
+import { node, bool } from 'prop-types';
 
-import HeadingStyled from './Heading.styles';
+import HeadingStyled, { MarginLess } from './Heading.styles';
 
 const propTypes = {
   children: node.isRequired,
+  marginLess: bool,
 };
 
-const Heading = ({ children }) => <HeadingStyled>{children}</HeadingStyled>;
+const defaultProps = {
+  marginLess: false,
+};
+
+const Heading = ({ children, marginLess }) => {
+  if (marginLess) return <MarginLess>{children}</MarginLess>;
+  return <HeadingStyled>{children}</HeadingStyled>;
+};
+
+Heading.MarginLess = (props) => <Heading {...props} marginLess />;
 
 Heading.propTypes = propTypes;
+Heading.defaultProps = defaultProps;
 
 export default Heading;

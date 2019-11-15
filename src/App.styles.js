@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: "Roboto", sans-serif;
     background-color: ${colors.primary[100]};
+    color: ${colors.primary[700]};
 
     &::after {
       content : "";

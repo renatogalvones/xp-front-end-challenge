@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import Search from '../components/Search';
-import SpotifyLogo from '../assets/spotify-logo.svg';
+import Search from '../components/Search';
+import SpotifyLogo from '../assets/images/spotify-logo.svg';
 
-import Card from '../components/Card';
-// import Heading from '../components/Heading';
+// import Card from '../components/Card';
+import Heading from '../components/Heading';
 
 // import Track from '../components/Track';
 
@@ -25,12 +25,8 @@ const Main = () => (
   <>
     <Logo src={SpotifyLogo} alt="Spotify Logo" />
     <MainStyled>
-      {/* <Search /> */}
-      {/* <Heading>Álbuns buscados recentemente</Heading> */}
-      <Card.Bigger
-        album="Nome do album grande de duas linhas"
-        artist="Nome do artista grande de duas linhas"
-      />
+      <Search />
+      <Heading>Álbuns buscados recentemente</Heading>
     </MainStyled>
   </>
 );
