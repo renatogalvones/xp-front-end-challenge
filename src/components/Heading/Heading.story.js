@@ -6,14 +6,8 @@ import { BackgroundStyled } from '../../App.styles';
 import Heading from './Heading';
 
 const stories = storiesOf('Heading', module);
-stories
-  .add('default', () => (
-    <BackgroundStyled>
-      <Heading>Álbuns recentemente buscados</Heading>
-    </BackgroundStyled>
-  ))
-  .add('marginLess', () => (
-    <BackgroundStyled>
-      <Heading.MarginLess>Álbuns recentemente buscados</Heading.MarginLess>
-    </BackgroundStyled>
-  ));
+stories.add('default', () => (
+  <BackgroundStyled>
+    <Heading>Álbuns recentemente buscados</Heading>
+  </BackgroundStyled>
+));
