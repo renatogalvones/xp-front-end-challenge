@@ -1,8 +1,12 @@
 import * as actionTypes from './actions';
+import * as localstorage from '../utils/localstorage';
+
+const localStored = localstorage.loadState();
 
 const initialState = {
   isAuthenticated: false,
   token: {},
+  ...localStored,
 };
 
 const reducer = (state = initialState, action) => {

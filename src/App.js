@@ -7,8 +7,7 @@ import GlobalStyles from './App.styles';
 
 import PrivateRoute from './components/PrivateRoute';
 import Login from './pages/Login';
-
-const SearchPage = () => <div>SEARCH PAGE</div>;
+import Search from './pages/Search';
 
 const propTypes = {
   isAuthenticated: bool.isRequired,
@@ -16,7 +15,7 @@ const propTypes = {
 
 const App = (props) => {
   const { isAuthenticated } = props;
-  const homeContent = isAuthenticated ? <SearchPage /> : <Login />;
+  const homeContent = () => (isAuthenticated ? <Redirect to="/search" /> : <Login />);
 
   return (
     <div>
@@ -26,7 +25,7 @@ const App = (props) => {
           {homeContent}
         </Route>
         <PrivateRoute path="/search" isAuthenticated={isAuthenticated}>
-          <SearchPage />
+          <Search />
         </PrivateRoute>
         {/* <Route path="/albums/:artist" component={Albums} /> */}
         <Redirect to="/" />

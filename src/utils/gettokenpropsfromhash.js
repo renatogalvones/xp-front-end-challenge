@@ -18,4 +18,4 @@ const getTokenPropsFromHash = () => {
   return tokenProps;
 };
 
-export { getTokenPropsFromHash };
+export default getTokenPropsFromHash;

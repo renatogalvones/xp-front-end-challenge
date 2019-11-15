@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
-import { getTokenPropsFromHash } from '../../utils';
+import getTokenPropsFromHash from '../../utils/gettokenpropsfromhash';
 import * as actionTypes from '../../store/actions';
 import Heading from '../../components/Heading';
 import Logo from '../../components/Logo';
@@ -16,12 +17,25 @@ const propTypes = {
 
 class Login extends Component {
   componentDidMount() {
-    const { setToken, unsetToken } = this.props;
-    const tokenProps = getTokenPropsFromHash();
-    console.log('tokenProps', tokenProps);
+    const { setToken, unsetToken, token } = this.props;
+    const tokenProps = getTokenPropsFromHash() || token;
+    const { access_token } = tokenProps;
 
-    if (tokenProps) return setToken(tokenProps);
-    return unsetToken();
+    const options = {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    };
+
+    // test if token is expired
+    axios
+      .get('https://api.spotify.com/v1/me', options)
+      .then(() => setToken(tokenProps))
+      .catch((error) => {
+        console.log('Login error:', error);
+
+        unsetToken();
+      });
   }
 
   render() {
@@ -40,11 +54,11 @@ class Login extends Component {
       <LoginStyled>
         <Logo />
         <a href={redirectUrl}>
-          <Heading.MarginLess>
+          <Heading>
             Clique aqui e
             <br />
             faça o login no Spotify para começar
-          </Heading.MarginLess>
+          </Heading>
         </a>
       </LoginStyled>
     );
@@ -52,6 +66,10 @@ class Login extends Component {
 }
 
 Login.propTypes = propTypes;
+
+const mapStateToProps = (state) => ({
+  token: state.token,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setToken: (props) => dispatch({
@@ -63,4 +81,4 @@ const mapDispatchToProps = (dispatch) => ({
   }),
 });
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

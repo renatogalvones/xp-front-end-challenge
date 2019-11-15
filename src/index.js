@@ -6,8 +6,13 @@ import { Provider } from 'react-redux';
 
 import reducer from './store/reducer';
 import App from './App';
+import * as localstorage from './utils/localstorage';
 
 const store = createStore(reducer);
+
+store.subscribe(() => {
+  localstorage.saveState(store.getState());
+});
 
 const app = (
   <Provider store={store}>
