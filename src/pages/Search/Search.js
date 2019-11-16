@@ -17,42 +17,48 @@ const propTypes = {
   token: oneOfType([
     shape({}),
     shape({
-      access_token: string.isRequired,
-      expires_in: string.isRequired,
-      token_type: string.isRequired,
+      accessToken: string.isRequired,
     }),
   ]),
+  searchTerm: string,
   unsetToken: func,
+  setSearchTerm: func,
+  requestSearch: func,
+  receiveSearch: func,
 };
 
 const defaultProps = {
   token: null,
+  searchTerm: '',
   unsetToken: () => {},
+  setSearchTerm: () => {},
+  requestSearch: () => {},
+  receiveSearch: () => {},
 };
 
 class SearchPage extends Component {
   constructor() {
     super();
-    this.state = {
-      searchTerm: '',
-      albums: null,
-    };
 
     this.searchContent = this.searchContent.bind(this);
     this.renderAlbums = this.renderAlbums.bind(this);
-    // this.render
   }
 
-  // eslint-disable-next-line class-methods-use-this
   searchContent(term) {
+    const {
+      token: { accessToken },
+      unsetToken,
+      setSearchTerm,
+      requestSearch,
+      receiveSearch,
+    } = this.props;
+
     if (!term) {
-      this.setState({ albums: null });
+      receiveSearch(null);
       return;
     }
-    const {
-      token: { access_token },
-      unsetToken,
-    } = this.props;
+
+    requestSearch();
 
     const queryParams = [];
     queryParams.push(`q=${encodeURIComponent(term)}`);
@@ -60,7 +66,7 @@ class SearchPage extends Component {
 
     const options = {
       headers: {
-        Authorization: `Bearer ${access_token}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     };
 
@@ -68,10 +74,9 @@ class SearchPage extends Component {
       .get(`https://api.spotify.com/v1/search?${queryParams.join('&')}`, options)
       .then((response) => {
         const { albums } = response.data;
-        this.setState({
-          searchTerm: term,
-          albums,
-        });
+
+        setSearchTerm(term);
+        receiveSearch(albums);
       })
       .catch((error) => {
         console.error('ERROR', error);
@@ -80,7 +85,7 @@ class SearchPage extends Component {
   }
 
   renderAlbums() {
-    const { albums } = this.state;
+    const { albums } = this.props;
     if (!albums) return null;
 
     const cards = albums.items.map((item, index) => {
@@ -98,7 +103,7 @@ class SearchPage extends Component {
   }
 
   renderHeading() {
-    const { searchTerm } = this.state;
+    const { searchTerm } = this.props;
     if (searchTerm) {
       return (
         <Heading>
@@ -132,10 +137,21 @@ SearchPage.defaultProps = defaultProps;
 const mapStateToProps = (state) => ({
   isAuthenticated: state.isAuthenticated,
   token: state.token,
+  searchTerm: state.searchTerm,
+  albums: state.albums,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   unsetToken: () => dispatch({ type: actionTypes.UNSET_TOKEN }),
+  setSearchTerm: (searchTerm) => dispatch({
+    type: actionTypes.SET_SEARCH_TERM,
+    searchTerm,
+  }),
+  requestSearch: () => dispatch({ type: actionTypes.REQUEST_SEARCH }),
+  receiveSearch: (albums) => dispatch({
+    type: actionTypes.RECEIVE_SEARCH,
+    albums,
+  }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

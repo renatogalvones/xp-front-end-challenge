@@ -1,2 +1,5 @@
 export const SET_TOKEN = 'SET_TOKEN';
 export const UNSET_TOKEN = 'UNSET_TOKEN';
+export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
+export const REQUEST_SEARCH = 'REQUEST_SEARCH';
+export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';

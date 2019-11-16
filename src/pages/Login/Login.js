@@ -16,9 +16,7 @@ const propTypes = {
   token: oneOfType([
     shape({}),
     shape({
-      access_token: string.isRequired,
-      expires_in: string.isRequired,
-      token_type: string.isRequired,
+      accessToken: string.isRequired,
     }),
   ]),
   setToken: func.isRequired,
@@ -33,18 +31,20 @@ class Login extends Component {
   componentDidMount() {
     const { setToken, unsetToken, token } = this.props;
     const tokenProps = getTokenPropsFromHash() || token;
-    const { access_token } = tokenProps;
+    const { access_token: accessToken } = tokenProps;
 
     const options = {
       headers: {
-        Authorization: `Bearer ${access_token}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     };
 
     // test if token is expired
     axios
       .get('https://api.spotify.com/v1/me', options)
-      .then(() => setToken(tokenProps))
+      .then(() => setToken({
+        accessToken: tokenProps.access_token,
+      }))
       .catch((error) => {
         console.log('Login error:', error);
 
