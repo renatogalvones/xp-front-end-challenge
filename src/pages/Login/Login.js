@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { func } from 'prop-types';
+import {
+  func, string, shape, oneOfType,
+} from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -11,8 +13,20 @@ import Logo from '../../components/Logo';
 import LoginStyled from './Login.styles';
 
 const propTypes = {
+  token: oneOfType([
+    shape({}),
+    shape({
+      access_token: string.isRequired,
+      expires_in: string.isRequired,
+      token_type: string.isRequired,
+    }),
+  ]),
   setToken: func.isRequired,
   unsetToken: func.isRequired,
+};
+
+const defaultProps = {
+  token: {},
 };
 
 class Login extends Component {
@@ -66,6 +80,7 @@ class Login extends Component {
 }
 
 Login.propTypes = propTypes;
+Login.defaultProps = defaultProps;
 
 const mapStateToProps = (state) => ({
   token: state.token,

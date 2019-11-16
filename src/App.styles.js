@@ -9,11 +9,6 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     outline: 0;
   }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
 
   ul, ol {
     list-style: none;

@@ -4,13 +4,9 @@ import { string } from 'prop-types';
 import { CardStyled, ImageStyled } from './Card.styles';
 
 const propTypes = {
-  imgUrl: string,
+  imgUrl: string.isRequired,
   album: string.isRequired,
   artist: string.isRequired,
-};
-
-const defaultProps = {
-  imgUrl: '',
 };
 
 export const renderCard = (imgUrl, album, artist, bigger) => {
@@ -30,6 +26,5 @@ const Card = ({ imgUrl, album, artist }) => renderCard(imgUrl, album, artist);
 Card.Bigger = ({ imgUrl, album, artist }) => renderCard(imgUrl, album, artist, true);
 
 Card.propTypes = propTypes;
-Card.defaultProps = defaultProps;
 
 export default Card;

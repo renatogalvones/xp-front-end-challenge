@@ -1,53 +1,62 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import {
+  oneOfType, shape, func, string,
+} from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import slugify from 'slugify';
 
+import * as actionTypes from '../../store/actions';
 import Search from '../../components/Search';
 import Heading from '../../components/Heading';
 import Card from '../../components/Card';
 
-const MainWrapper = styled.section`
-  max-width: 1130px;
-  margin: 75px auto 0;
+import MainWrapper from './Search.styles';
 
-  > h1 {
-    padding: 0 1rem;
-  }
+const propTypes = {
+  token: oneOfType([
+    shape({}),
+    shape({
+      access_token: string.isRequired,
+      expires_in: string.isRequired,
+      token_type: string.isRequired,
+    }),
+  ]),
+  unsetToken: func,
+};
 
-  .search {
-    padding: 1rem;
-  }
-
-  > .list {
-    column-count: 5;
-    margin: 1.5em auto;
-    max-width: 1130px;
-    column-gap: 1.5rem;
-
-    > figure {
-      padding: 1rem;
-      margin: 0 0 1.5rem;
-    }
-  }
-`;
+const defaultProps = {
+  token: null,
+  unsetToken: () => {},
+};
 
 class SearchPage extends Component {
   constructor() {
     super();
+    this.state = {
+      searchTerm: '',
+      albums: null,
+    };
 
     this.searchContent = this.searchContent.bind(this);
+    this.renderAlbums = this.renderAlbums.bind(this);
+    // this.render
   }
 
   // eslint-disable-next-line class-methods-use-this
   searchContent(term) {
+    if (!term) {
+      this.setState({ albums: null });
+      return;
+    }
     const {
       token: { access_token },
+      unsetToken,
     } = this.props;
 
     const queryParams = [];
-    queryParams.push(`q=${term}`);
-    queryParams.push('type=album,track,track');
+    queryParams.push(`q=${encodeURIComponent(term)}`);
+    queryParams.push('type=album,artist,track');
 
     const options = {
       headers: {
@@ -58,16 +67,50 @@ class SearchPage extends Component {
     axios
       .get(`https://api.spotify.com/v1/search?${queryParams.join('&')}`, options)
       .then((response) => {
-        console.log('response', response);
+        const { albums } = response.data;
+        this.setState({
+          searchTerm: term,
+          albums,
+        });
       })
       .catch((error) => {
-        console.log('ERROR', error);
+        console.error('ERROR', error);
+        unsetToken();
       });
   }
 
-  render() {
-    console.log('props', this.props);
+  renderAlbums() {
+    const { albums } = this.state;
+    if (!albums) return null;
 
+    const cards = albums.items.map((item, index) => {
+      const cardProps = {
+        key: slugify(`${index}${item.name}-${item.artists[0].name}`),
+        imgUrl: item.images[1].url,
+        album: item.name,
+        artist: item.artists[0].name,
+      };
+
+      return <Card {...cardProps} />;
+    });
+
+    return cards;
+  }
+
+  renderHeading() {
+    const { searchTerm } = this.state;
+    if (searchTerm) {
+      return (
+        <Heading>
+          Resultado da busca por
+          {` "${searchTerm}"`}
+        </Heading>
+      );
+    }
+    return <Heading>Álbuns buscados recentemente</Heading>;
+  }
+
+  render() {
     return (
       <>
         {/* <Logo src={SpotifyLogo} alt="Spotify Logo" /> */}
@@ -75,29 +118,24 @@ class SearchPage extends Component {
           <section className="search">
             <Search handleSearch={this.searchContent} />
           </section>
-          <Heading>Álbuns buscados recentemente</Heading>
-          <section className="list">
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-            <Card album="xablau" artist="xablauzinho" />
-          </section>
+          {this.renderHeading()}
+          <section className="list">{this.renderAlbums()}</section>
         </MainWrapper>
       </>
     );
   }
 }
 
+SearchPage.propTypes = propTypes;
+SearchPage.defaultProps = defaultProps;
+
 const mapStateToProps = (state) => ({
   isAuthenticated: state.isAuthenticated,
   token: state.token,
 });
 
-const mapDispatchToProps = null;
+const mapDispatchToProps = (dispatch) => ({
+  unsetToken: () => dispatch({ type: actionTypes.UNSET_TOKEN }),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

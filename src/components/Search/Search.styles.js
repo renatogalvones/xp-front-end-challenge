@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 
 import colors from '../../theme/colors';
 
 export const FormStyled = styled.form`
-  padding: 0 5px 16px;
   border-bottom: solid 1px ${colors.primary[700]};
-  margin-bottom: 20px;
+  padding: 0 5px 5px;
+  margin-bottom: 10px;
+
+  ${breakpoint('desktop')`
+    padding: 0 5px 16px;
+    margin-bottom: 20px;
+  `}
 `;
 
 export const SearchStyled = styled.label`
@@ -20,9 +26,13 @@ export const InputStyled = styled.input`
   border: none;
   color: ${colors.primary[300]};
   display: block;
-  font-size: 48px;
   font-weight: bold;
   height: 50px;
   margin-top: 10px;
   width: 100%;
+  font-size: 24px;
+
+  ${breakpoint('desktop')`
+    font-size: 48px;
+  `}
 `;

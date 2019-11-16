@@ -11,13 +11,19 @@ class Search extends Component {
   constructor() {
     super();
 
-    this.changedHandler = this.changedHandler.bind(this);
+    this.typingTimer = null;
+    this.typingDelay = 1000;
+    this.keyUpHandler = this.keyUpHandler.bind(this);
   }
 
-  changedHandler(event) {
+  keyUpHandler(event) {
     const { handleSearch } = this.props;
     const term = event.target.value;
-    handleSearch(term);
+
+    clearTimeout(this.typingTimer);
+    if (term) {
+      this.typingTimer = setTimeout(() => handleSearch(term), this.typingDelay);
+    }
   }
 
   render() {
@@ -26,10 +32,12 @@ class Search extends Component {
         <SearchStyled htmlFor="search">
           Busque por artistas, álbuns ou músicas
           <InputStyled
-            type="text"
+            type="search"
             id="search"
             placeholder="Comece a escrever..."
-            onChange={this.changedHandler}
+            autoComplete="off"
+            // onChange={this.keyUpHandler}
+            onKeyUp={this.keyUpHandler}
           />
         </SearchStyled>
       </FormStyled>

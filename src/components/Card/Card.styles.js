@@ -3,13 +3,9 @@ import styled from 'styled-components';
 
 import colors from '../../theme/colors';
 
-const sizes = {
-  default: 170,
-  bigger: 300,
-};
-
 export const CardStyled = styled.figure`
-  max-width: ${(props) => (props.bigger ? sizes.bigger : sizes.default)}px;
+  max-width: 100%;
+  margin: 0;
 
   > figcaption {
     padding: 0 ${(props) => (props.bigger ? 45 : 5)}px;
@@ -35,16 +31,14 @@ export const CardStyled = styled.figure`
     `}
 
     > span:nth-child(2) {
-      color: ${colors.primary[700]};
+      color: ${colors.primary[300]};
     }
   }
 `;
 
 export const ImageStyled = styled.div`
-  background-color: ${colors.primary[700]};
   display: inline-block;
-  height: ${(props) => (props.bigger ? sizes.bigger : sizes.default)}px;
-  width: ${(props) => (props.bigger ? sizes.bigger : sizes.default)}px;
+  width: 100%;
 
   > img {
     width: 100%;
