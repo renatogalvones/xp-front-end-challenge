@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> with default props should match snapshot 1`] = `
+<Heading>
+  <Headingstyles__HeadingStyled>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Headingstyles__HeadingStyled-sc-15dfmro-0",
+            "isStatic": false,
+            "lastClassName": "depeJO",
+            "rules": Array [
+              "color:",
+              "#FAFAFA",
+              ";display:inline-block;width:100%;padding:0;font-family:'Roboto',sans-serif;font-weight:normal;font-size:18px;",
+              [Function],
+            ],
+          },
+          "displayName": "Headingstyles__HeadingStyled",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "Headingstyles__HeadingStyled-sc-15dfmro-0",
+          "target": "h1",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <h1
+        className="Headingstyles__HeadingStyled-sc-15dfmro-0 depeJO"
+      >
+        Test heading
+      </h1>
+    </StyledComponent>
+  </Headingstyles__HeadingStyled>
+</Heading>
+`;
