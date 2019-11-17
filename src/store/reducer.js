@@ -8,6 +8,7 @@ const initialState = {
   token: {},
   searchTerm: '',
   albums: null,
+  album: null,
   ...localStored,
 };
 
@@ -37,7 +38,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         searchLoading: true,
-        albums: null,
       };
 
     case actionTypes.RECEIVE_SEARCH:
@@ -45,6 +45,20 @@ const reducer = (state = initialState, action) => {
         ...state,
         searchLoading: false,
         albums: action.albums,
+      };
+
+    case actionTypes.REQUEST_ALBUM:
+      return {
+        ...state,
+        albumLoading: true,
+        album: null,
+      };
+
+    case actionTypes.RECEIVE_ALBUM:
+      return {
+        ...state,
+        albumLoading: false,
+        album: action.album,
       };
 
     default:

@@ -5,6 +5,7 @@ import {
 import { connect } from 'react-redux';
 import axios from 'axios';
 import slugify from 'slugify';
+import { Link } from 'react-router-dom';
 
 import * as actionTypes from '../../store/actions';
 import Search from '../../components/Search';
@@ -89,14 +90,22 @@ class SearchPage extends Component {
     if (!albums) return null;
 
     const cards = albums.items.map((item, index) => {
-      const cardProps = {
+      const linkProps = {
         key: slugify(`${index}${item.name}-${item.artists[0].name}`),
+        to: `/albums/${slugify(item.artists[0].name)}/${item.id}`,
+      };
+
+      const cardProps = {
         imgUrl: item.images[1].url,
         album: item.name,
         artist: item.artists[0].name,
       };
 
-      return <Card {...cardProps} />;
+      return (
+        <Link {...linkProps}>
+          <Card {...cardProps} />
+        </Link>
+      );
     });
 
     return cards;

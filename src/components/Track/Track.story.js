@@ -10,16 +10,16 @@ stories
   .add('single', () => (
     <BackgroundStyled>
       <ol>
-        <Track num="1" name="Nome do album" length="3:31" />
+        <Track num="1" name="Nome do album" duration="3:31" />
       </ol>
     </BackgroundStyled>
   ))
   .add('listing', () => (
     <BackgroundStyled>
       <ol>
-        <Track num="1" name="Nome do album" length="3:31" />
-        <Track num="2" name="Nome do album" length="1:10" />
-        <Track num="3" name="Nome do album" length="5:21" />
+        <Track num="1" name="Nome do album" duration="3:31" />
+        <Track num="2" name="Nome do album" duration="1:10" />
+        <Track num="3" name="Nome do album" duration="5:21" />
       </ol>
     </BackgroundStyled>
   ));

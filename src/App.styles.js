@@ -14,6 +14,11 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  a {
+    color: ${colors.primary[900]};
+    text-decoration: none;
+  }
+
   body {
     font-family: "Roboto", sans-serif;
     background-color: ${colors.primary[100]};

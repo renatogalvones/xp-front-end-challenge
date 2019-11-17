@@ -3,3 +3,5 @@ export const UNSET_TOKEN = 'UNSET_TOKEN';
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
 export const REQUEST_SEARCH = 'REQUEST_SEARCH';
 export const RECEIVE_SEARCH = 'RECEIVE_SEARCH';
+export const REQUEST_ALBUM = 'REQUEST_ALBUM';
+export const RECEIVE_ALBUM = 'RECEIVE_ALBUM';

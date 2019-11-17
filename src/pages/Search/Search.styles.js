@@ -18,7 +18,7 @@ const MainWrapper = styled.section`
       margin: 0 -30px;
     `}
 
-    > figure {
+    > a {
       min-height: 260px;
       margin-top: 40px;
       transition: transform 0.2s linear;

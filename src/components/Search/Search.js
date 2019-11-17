@@ -36,7 +36,6 @@ class Search extends Component {
             id="search"
             placeholder="Comece a escrever..."
             autoComplete="off"
-            // onChange={this.keyUpHandler}
             onKeyUp={this.keyUpHandler}
           />
         </SearchStyled>

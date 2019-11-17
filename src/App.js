@@ -8,6 +8,7 @@ import GlobalStyles from './App.styles';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './pages/Login';
 import Search from './pages/Search';
+import Album from './pages/Album';
 
 const propTypes = {
   isAuthenticated: bool.isRequired,
@@ -27,7 +28,9 @@ const App = (props) => {
         <PrivateRoute path="/search" isAuthenticated={isAuthenticated}>
           <Search />
         </PrivateRoute>
-        {/* <Route path="/albums/:artist" component={Albums} /> */}
+        <PrivateRoute path="/albums/:artist/:albumId" isAuthenticated={isAuthenticated}>
+          <Album />
+        </PrivateRoute>
         <Redirect to="/" />
       </Switch>
     </div>
