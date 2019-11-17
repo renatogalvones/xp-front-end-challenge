@@ -10,6 +10,7 @@ const LoginStyled = styled.header`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  align-items: center;
 `;
 
 export default LoginStyled;

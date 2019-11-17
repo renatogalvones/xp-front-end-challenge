@@ -55,10 +55,8 @@ class Login extends Component {
   render() {
     const authEndpoint = 'https://accounts.spotify.com/pt-BR/authorize';
     const queryParams = [];
-    // const scopes = ['user-read-currently-playing', 'user-read-playback-state'];
     queryParams.push('client_id=063c30d05c6a44f58c62d3af99e4a7a9');
     queryParams.push('redirect_uri=http://localhost:8080/');
-    // queryParams.push(`scope=${scopes.join('%20')}`);
     queryParams.push('response_type=token');
     queryParams.push('show_dialog=true');
 
