@@ -5,7 +5,7 @@ import colors from '../../theme/colors';
 
 export const FormStyled = styled.form`
   border-bottom: solid 1px ${colors.primary[700]};
-  padding: 0 5px 5px;
+  padding: 0 0 5px;
   margin-bottom: 10px;
 
   ${breakpoint('desktop')`
