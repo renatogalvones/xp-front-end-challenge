@@ -21,7 +21,7 @@ const cardProps = {
     'https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg',
 };
 
-const imageProps = {
+const doubleLineProps = {
   album: 'Nome do album grande de duas linhas',
   artist: 'Nome do artista grande de duas linhas',
   imgUrl:
@@ -40,7 +40,7 @@ stories
   .add('with image', () => (
     <BackgroundStyled>
       <SmallWrapper>
-        <Card {...imageProps} />
+        <Card {...doubleLineProps} />
       </SmallWrapper>
     </BackgroundStyled>
   ))
@@ -54,7 +54,7 @@ stories
   .add('Bigger with image', () => (
     <BackgroundStyled>
       <BiggerWrapper>
-        <Card.Bigger {...imageProps} />
+        <Card.Bigger {...doubleLineProps} />
       </BiggerWrapper>
     </BackgroundStyled>
   ));

@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> with bigger props should match snapshot 1`] = `
+<Component
+  album="Nome do album"
+  artist="Nome do artista"
+  imgUrl="https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg"
+>
+  <Cardstyles__CardStyled
+    bigger={true}
+  >
+    <StyledComponent
+      bigger={true}
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Cardstyles__CardStyled-sc-1dpv5pg-0",
+            "isStatic": false,
+            "lastClassName": "gKqnuC",
+            "rules": Array [
+              "max-width:100%;margin:0;> figcaption{padding:0 ",
+              [Function],
+              "px;> span{display:inline-block;width:100%;color:",
+              "#FFF",
+              ";font-family:'Roboto',sans-serif;text-align:center;margin-top:7px;font-size:14px;line-height:16px;}",
+              [Function],
+              " > span:nth-child(2){color:",
+              "#999",
+              ";}}",
+            ],
+          },
+          "displayName": "Cardstyles__CardStyled",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "Cardstyles__CardStyled-sc-1dpv5pg-0",
+          "target": "figure",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <figure
+        className="Cardstyles__CardStyled-sc-1dpv5pg-0 gKqnuC"
+      >
+        <Cardstyles__ImageStyled
+          bigger={true}
+        >
+          <StyledComponent
+            bigger={true}
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "Cardstyles__ImageStyled-sc-1dpv5pg-1",
+                  "isStatic": false,
+                  "lastClassName": "fCDhzC",
+                  "rules": Array [
+                    "display:inline-block;width:100%;> img{width:100%;}",
+                  ],
+                },
+                "displayName": "Cardstyles__ImageStyled",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "Cardstyles__ImageStyled-sc-1dpv5pg-1",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="Cardstyles__ImageStyled-sc-1dpv5pg-1 fCDhzC"
+            >
+              <img
+                alt="Nome do album - Nome do artista"
+                src="https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg"
+              />
+            </div>
+          </StyledComponent>
+        </Cardstyles__ImageStyled>
+        <figcaption>
+          <span>
+            Nome do album
+          </span>
+          <span>
+            Nome do artista
+          </span>
+        </figcaption>
+      </figure>
+    </StyledComponent>
+  </Cardstyles__CardStyled>
+</Component>
+`;
+
+exports[`<Card /> with default props should match snapshot 1`] = `
+<Card
+  album="Nome do album"
+  artist="Nome do artista"
+  imgUrl="https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg"
+>
+  <Cardstyles__CardStyled>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Cardstyles__CardStyled-sc-1dpv5pg-0",
+            "isStatic": false,
+            "lastClassName": "gfdXlx",
+            "rules": Array [
+              "max-width:100%;margin:0;> figcaption{padding:0 ",
+              [Function],
+              "px;> span{display:inline-block;width:100%;color:",
+              "#FFF",
+              ";font-family:'Roboto',sans-serif;text-align:center;margin-top:7px;font-size:14px;line-height:16px;}",
+              [Function],
+              " > span:nth-child(2){color:",
+              "#999",
+              ";}}",
+            ],
+          },
+          "displayName": "Cardstyles__CardStyled",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "Cardstyles__CardStyled-sc-1dpv5pg-0",
+          "target": "figure",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <figure
+        className="Cardstyles__CardStyled-sc-1dpv5pg-0 gfdXlx"
+      >
+        <Cardstyles__ImageStyled>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "Cardstyles__ImageStyled-sc-1dpv5pg-1",
+                  "isStatic": false,
+                  "lastClassName": "fCDhzC",
+                  "rules": Array [
+                    "display:inline-block;width:100%;> img{width:100%;}",
+                  ],
+                },
+                "displayName": "Cardstyles__ImageStyled",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "Cardstyles__ImageStyled-sc-1dpv5pg-1",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="Cardstyles__ImageStyled-sc-1dpv5pg-1 fCDhzC"
+            >
+              <img
+                alt="Nome do album - Nome do artista"
+                src="https://cdn.smehost.net/rcarecordscom-usrcaprod/wp-content/uploads/2013/05/Run-Cover.jpg"
+              />
+            </div>
+          </StyledComponent>
+        </Cardstyles__ImageStyled>
+        <figcaption>
+          <span>
+            Nome do album
+          </span>
+          <span>
+            Nome do artista
+          </span>
+        </figcaption>
+      </figure>
+    </StyledComponent>
+  </Cardstyles__CardStyled>
+</Card>
+`;
