@@ -5,7 +5,8 @@
     "format": "prettier --write ./**/*.{js,jsx,json}",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.19.0",
