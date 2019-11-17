@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Track /> with default props should match snapshot 1`] = `
+<Track
+  duration="3:31"
+  handleClick={[Function]}
+  id="id"
+  name="Nome do album"
+  num={1}
+>
+  <Trackstyles__TrackStyled
+    onClick={[Function]}
+  >
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Trackstyles__TrackStyled-sc-45spy5-0",
+            "isStatic": false,
+            "lastClassName": "etTWSl",
+            "rules": Array [
+              "display:flex;justify-content:flex;width:100%;font-size:16px;padding-bottom:25px;color:",
+              "#999",
+              ";> span{font-family:'Roboto',sans-serif;}> span:nth-child(1){width:50px;transition:width 0.3s ease-out;&::after{content:'.';margin-right:15px;",
+              [Function],
+              "}}> span:nth-child(2){flex-grow:1;color:",
+              "#FAFAFA",
+              ";}}}&:hover{cursor:pointer;> span:nth-child(1){width:65px;}}",
+            ],
+          },
+          "displayName": "Trackstyles__TrackStyled",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "Trackstyles__TrackStyled-sc-45spy5-0",
+          "target": "li",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      onClick={[Function]}
+    >
+      <li
+        className="Trackstyles__TrackStyled-sc-45spy5-0 etTWSl"
+        onClick={[Function]}
+      >
+        <span>
+          1
+        </span>
+        <span>
+          Nome do album
+        </span>
+        <span>
+          3:31
+        </span>
+      </li>
+    </StyledComponent>
+  </Trackstyles__TrackStyled>
+</Track>
+`;

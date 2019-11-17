@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> with default props should match snapshot 1`] = `
+<Search
+  handleSearch={[Function]}
+>
+  <Searchstyles__FormStyled
+    action=""
+  >
+    <StyledComponent
+      action=""
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "Searchstyles__FormStyled-sc-1d5ecam-0",
+            "isStatic": false,
+            "lastClassName": "cUcevQ",
+            "rules": Array [
+              "border-bottom:solid 1px ",
+              "#FAFAFA",
+              ";padding:0 0 5px;margin-bottom:10px;",
+              [Function],
+            ],
+          },
+          "displayName": "Searchstyles__FormStyled",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "Searchstyles__FormStyled-sc-1d5ecam-0",
+          "target": "form",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <form
+        action=""
+        className="Searchstyles__FormStyled-sc-1d5ecam-0 cUcevQ"
+      >
+        <Searchstyles__SearchStyled
+          htmlFor="search"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "Searchstyles__SearchStyled-sc-1d5ecam-1",
+                  "isStatic": false,
+                  "lastClassName": "cnabGP",
+                  "rules": Array [
+                    "color:",
+                    "#FFF",
+                    ";display:block;font-family:'Roboto',sans-serif;font-size:16px;",
+                  ],
+                },
+                "displayName": "Searchstyles__SearchStyled",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "Searchstyles__SearchStyled-sc-1d5ecam-1",
+                "target": "label",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            htmlFor="search"
+          >
+            <label
+              className="Searchstyles__SearchStyled-sc-1d5ecam-1 cnabGP"
+              htmlFor="search"
+            >
+              Busque por artistas, álbuns ou músicas
+              <Searchstyles__InputStyled
+                autoComplete="off"
+                id="search"
+                onKeyUp={[Function]}
+                placeholder="Comece a escrever..."
+                type="search"
+              >
+                <StyledComponent
+                  autoComplete="off"
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "Searchstyles__InputStyled-sc-1d5ecam-2",
+                        "isStatic": false,
+                        "lastClassName": "nQjor",
+                        "rules": Array [
+                          "background-color:transparent;border:none;color:",
+                          "#999",
+                          ";display:block;font-weight:bold;height:50px;margin-top:10px;width:100%;font-size:24px;",
+                          [Function],
+                        ],
+                      },
+                      "displayName": "Searchstyles__InputStyled",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "Searchstyles__InputStyled-sc-1d5ecam-2",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  id="search"
+                  onKeyUp={[Function]}
+                  placeholder="Comece a escrever..."
+                  type="search"
+                >
+                  <input
+                    autoComplete="off"
+                    className="Searchstyles__InputStyled-sc-1d5ecam-2 nQjor"
+                    id="search"
+                    onKeyUp={[Function]}
+                    placeholder="Comece a escrever..."
+                    type="search"
+                  />
+                </StyledComponent>
+              </Searchstyles__InputStyled>
+            </label>
+          </StyledComponent>
+        </Searchstyles__SearchStyled>
+      </form>
+    </StyledComponent>
+  </Searchstyles__FormStyled>
+</Search>
+`;
