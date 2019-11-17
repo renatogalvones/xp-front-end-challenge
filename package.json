@@ -4,7 +4,8 @@
     "precommit": "lint-staged",
     "format": "prettier --write ./**/*.{js,jsx,json}",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "webpack --config webpack.config.prod.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
